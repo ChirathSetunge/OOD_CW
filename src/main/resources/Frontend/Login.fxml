@@ -1,14 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Frontend.controller.LoginController"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.LoginController">
+   <center>
+      <VBox alignment="CENTER" prefHeight="800.0" prefWidth="600.0" spacing="30.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" text="Welcome Back">
+               <font>
+                  <Font name="Helvetica Bold" size="40.0" />
+               </font>
+            </Label>
+            <TextField fx:id="loginUsername" prefHeight="56.0" prefWidth="334.0" promptText="Username" style="-fx-background-color: #d9d2c6;">
+               <font>
+                  <Font name="Helvetica" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="50.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="loginPassword" prefHeight="56.0" prefWidth="334.0" promptText="Password" style="-fx-background-color: #d9d2c6;">
+               <font>
+                  <Font name="Helvetica" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="30.0" left="30.0" right="30.0" />
+               </VBox.margin>
+            </TextField>
+            <Button fx:id="loginButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="56.0" prefWidth="334.0" style="-fx-background-color: #ed8008;" text="Login">
+               <font>
+                  <Font name="Helvetica" size="36.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Button>
+            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="266.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="150.0" text="Don't have an account ?" />
+                  <Button fx:id="signUpButton" mnemonicParsing="false" style="-fx-background-color: #000000;" text="Sign Up" textFill="#ed8008" />
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
