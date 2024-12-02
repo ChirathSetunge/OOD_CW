@@ -9,6 +9,7 @@ public class AdminAccount extends Account {
     public AdminAccount(String username, String password, String email) {
         super(username, password, email);
     }
+    //admin login using credentials from a CSV file
     public boolean login() {
         String line;
         String csvFile = "admin_credentials.csv";
