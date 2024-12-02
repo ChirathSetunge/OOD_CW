@@ -57,7 +57,7 @@ public class ArticleCategorizer {
 
             categorizedArticles.add(categorizedArticle);
         }
-        System.out.println("Categorized articles size of " + categorizedArticles.size());
+        System.out.println("Categorized articles size of " + categorizedArticles.size() + " generated");
         return categorizedArticles;
     }
 
