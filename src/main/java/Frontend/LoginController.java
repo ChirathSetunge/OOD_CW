@@ -67,6 +67,8 @@ public class LoginController {
             stage.setScene(scene);
             stage.show();
             infoPanel.setText("");
+            loginUsername.clear();
+            loginPassword.clear();
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Failed to load the ViewArticle scene.");
@@ -110,7 +112,8 @@ public class LoginController {
     @FXML
     private void onExitButtonClicked(ActionEvent event) {
         // Exit the application
-        Platform.exit();
+        databaseHandler.closeConnection();
+        System.exit(0);
     }
 
 

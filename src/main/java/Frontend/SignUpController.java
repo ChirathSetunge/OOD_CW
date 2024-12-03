@@ -63,6 +63,9 @@ public class SignUpController {
             stage.setScene(scene);
             stage.show();
             infoPanel.setText("");
+            registerUsername.clear();
+            registerPassword.clear();
+            registerEmail.clear();
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Failed to load the ViewArticle scene.");
@@ -107,7 +110,8 @@ public class SignUpController {
     @FXML
     private void onExitButtonClicked(ActionEvent event) {
         // Exit the application
-        Platform.exit();
+        databaseHandler.closeConnection();
+        System.exit(0);
     }
 
 }

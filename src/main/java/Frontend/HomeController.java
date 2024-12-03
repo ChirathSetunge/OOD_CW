@@ -25,7 +25,7 @@ public class HomeController {
     @FXML
     private void onExitButtonClicked(ActionEvent event) {
         // Exit the application
-        Platform.exit();
+        System.exit(0);
     }
     @FXML
     private void onUserSignUpButtonClicked(ActionEvent event) {

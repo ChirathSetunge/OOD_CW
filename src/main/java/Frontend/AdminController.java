@@ -16,11 +16,11 @@ import java.io.IOException;
 
 public class AdminController {
     @FXML
+    private Label adminLoginInfoPanel;
+    @FXML
     private Label adminInfoPanel;
     @FXML
     private Label infoPanel3;
-    @FXML
-    private Label adminLoginInfoPanel;
     @FXML
     private TextField loginUsername;
     @FXML
@@ -45,7 +45,7 @@ public class AdminController {
             System.out.println("Admin Login successful!");
             // Move to the next scene (Admin)
             navigateToAdminDashboard(event);
-            adminInfoPanel.setText("Welcome, " + username + "!");
+            adminInfoPanel.setText("Welcome!");
         } else {
             adminLoginInfoPanel.setText("Login failed! Please check your username and password.");
             System.out.println("Admin login failed! error in username and password.");
