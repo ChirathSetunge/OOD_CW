@@ -10,7 +10,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -22,17 +21,10 @@ public class LoginController {
     @FXML
     private Label infoPanel;
     @FXML
-    private Button startSceneButton;
-    @FXML
-    private Button exitButton;
-    @FXML
     private TextField loginUsername;
     @FXML
     private TextField loginPassword;
-    @FXML
-    private Button signUpButton;
-    @FXML
-    private Button loginButton;
+
 
     private final DatabaseHandler databaseHandler = DatabaseHandler.getDbInstance();
 
@@ -62,6 +54,7 @@ public class LoginController {
     }
 
     private void navigateToViewArticle(ActionEvent event, UserAccount userAccount) {
+        // Move to the ViewArticle scene
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ViewArticle.fxml"));
             Parent root = fxmlLoader.load();
@@ -83,7 +76,7 @@ public class LoginController {
     private void navigateToSignUp(ActionEvent event) {
         // Move to the signUp scene
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SignUp.fxml")); // Adjust the FXML path
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SignUp.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
