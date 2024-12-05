@@ -13,28 +13,28 @@ public class UserAccount extends Account {
         //UserAccount "has a" UserPreferences. (Composition)
         userPreferences = new UserPreferences();
     }
-    public boolean register(DatabaseHandler dbHandler) {
+    public boolean register(DatabaseHandler databaseHandler) {
         // register account and save preferences to DB (initially all 0)
         boolean success = false;
         try {
-            success = dbHandler.registerAccountAsync(this).get();
+            success = databaseHandler.registerAccountAsync(this).get();
             if (success) {
                 // save preferences to DB
-                this.userPreferences.savePreferencesToDB(dbHandler, this.getUsername());
+                this.userPreferences.savePreferencesToDB(databaseHandler, this.getUsername());
             }
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
         return success;
     }
-    public boolean login(DatabaseHandler dbHandler) {
+    public boolean login(DatabaseHandler databaseHandler) {
         // login account and load preferences from DB
         boolean success = false;
         try {
-            success = dbHandler.loginAccountAsync(this).get();
+            success = databaseHandler.loginAccountAsync(this).get();
             if (success) {
                 // load preferences from DB
-                this.userPreferences.loadPreferencesFromDB(dbHandler, this.getUsername());
+                this.userPreferences.loadPreferencesFromDB(databaseHandler, this.getUsername());
             }
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();

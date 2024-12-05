@@ -22,6 +22,8 @@ public class ArticleFetcher {
             List<Map.Entry<String, String>> articles = databaseHandler.loadArticlesAsync().get();
             // Categorize articles
             List<Map<String, String>> categorizedArticles = articleCategorizer.categorizeArticles(articles);
+            // Clear the CategorizedArticles table
+            databaseHandler.clearCategorizedArticlesTable();
             // Save categorized articles to database
             databaseHandler.saveCategorizedArticlesAsync(categorizedArticles);
             // Database methods run asynchronously, so ExecutionException and InterruptedException is handled

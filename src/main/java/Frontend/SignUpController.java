@@ -47,6 +47,7 @@ public class SignUpController {
             navigateToViewArticle(event, userAccount);
         } else {
             infoPanel.setText("Account registration failed!, username already exists.");
+            registerUsername.clear();
         }
     }
     private void navigateToViewArticle(ActionEvent event, UserAccount userAccount) {

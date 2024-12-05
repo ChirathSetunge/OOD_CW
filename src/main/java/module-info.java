@@ -3,7 +3,8 @@ module org.example.ood_cw {
     requires javafx.fxml;
     requires java.desktop;
     requires java.sql;
-    requires mysql.connector.j;
+    requires commons.math3;
+    requires org.xerial.sqlitejdbc;
 
 
     opens Frontend to javafx.fxml;

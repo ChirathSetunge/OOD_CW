@@ -44,7 +44,7 @@ public class ViewArticleController {
     private int preferenceUpdateCount = 0;
     private long articleLoadTime;
     private final List<String> recommendedCategories = new ArrayList<>();
-    private final ExecutorService executor = Executors.newFixedThreadPool(2);
+    private final ExecutorService executor = Executors.newFixedThreadPool(5);
     public void initialize() {
         System.out.println("ViewArticleController initialized");
         recommendationEngine.trainFromCSV();
@@ -83,7 +83,7 @@ public class ViewArticleController {
                         // Handle the case where no article is found
                         articleTitle.setText("No articles available!");
                         articleContent.getChildren().clear();
-                        articleType.setText("New");
+                        articleType.setText("Unavailable");
                         infoPanel.setText("No articles available for this category. Please try again later.");
                     }
                 });
@@ -173,6 +173,7 @@ public class ViewArticleController {
         if (allCategoriesNonZero) {
             recomputeRecommendations();
             navigateToRecommendation(event);
+            savePreferences();
         } else {
             System.out.println("Not all categories have a non-zero preference score. User needs to interact with more articles.");
             infoPanel.setText("Please interact with more articles to get recommendations.");
@@ -218,6 +219,7 @@ public class ViewArticleController {
     @FXML
     private void onExitButtonClicked(ActionEvent event) {
         // Exit the application
+        savePreferences();
         databaseHandler.removeActiveSession(currentUser.getUsername());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();

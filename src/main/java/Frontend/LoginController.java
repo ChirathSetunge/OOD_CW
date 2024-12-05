@@ -24,8 +24,6 @@ public class LoginController {
     private TextField loginUsername;
     @FXML
     private TextField loginPassword;
-
-
     private final DatabaseHandler databaseHandler = DatabaseHandler.getDbInstance();
 
     @FXML
@@ -48,6 +46,8 @@ public class LoginController {
             navigateToViewArticle(event, userAccount);
         } else {
             infoPanel.setText("Login failed! Please check your username and password or already logged in.");
+            loginUsername.clear();
+            loginPassword.clear();
             System.out.println("User login failed! error in username and password.");
         }
 
