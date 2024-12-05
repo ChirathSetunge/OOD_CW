@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.AdminController">
+   <center>
+      <VBox alignment="CENTER" prefHeight="800.0" prefWidth="600.0" spacing="30.0" style="-fx-background-color: #ece8e2;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="522.0" prefWidth="600.0" spacing="20.0">
+               <children>
+                  <Button fx:id="categorizeArticlesButton" mnemonicParsing="false" onAction="#onCategorizeArticlesButtonClicked" prefHeight="45.0" style="-fx-background-color: #ed8008;" text="Categorize Articles">
+                     <font>
+                        <Font name="Helvetica Bold" size="16.0" />
+                     </font></Button>
+                  <VBox alignment="CENTER" prefHeight="522.0" prefWidth="286.0" spacing="30.0">
+                     <children>
+                        <Label fx:id="adminInfoPanel">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <Label fx:id="infoPanel1" text="Click Categorize Articles button to Fetch and Categorize Articles" wrapText="true">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <Label fx:id="infoPanel2" prefHeight="17.0" prefWidth="288.0" text="After Categorizing Articles click HOME to Exit">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                        <Label fx:id="infoPanel3">
+                           <font>
+                              <Font size="16.0" />
+                           </font></Label>
+                     </children></VBox>
+                  <Button fx:id="homeButton" mnemonicParsing="false" onAction="#onHomeButtonClicked" prefHeight="45.0" style="-fx-background-color: #d9d2c6;" text="Home">
+                     <font>
+                        <Font name="Helvetica Bold" size="16.0" />
+                     </font></Button>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="97.0" prefWidth="600.0" spacing="20.0" style="-fx-background-color: #ece8e2;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="startSceneButton" mnemonicParsing="false" onAction="#onStartSceneButtonClicked" prefHeight="56.0" prefWidth="145.0" style="-fx-background-color: #d9d2c6;" text="MY NEWS">
+               <font>
+                  <Font name="Helvetica Bold" size="22.0" />
+               </font></Button>
+            <Label alignment="CENTER" text="System Configurator">
+               <font>
+                  <Font name="Helvetica Bold" size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

@@ -11,13 +11,14 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.LoginController">
    <center>
-      <VBox alignment="CENTER" prefHeight="800.0" prefWidth="600.0" spacing="30.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="800.0" prefWidth="600.0" spacing="30.0" style="-fx-background-color: #ece8e2;" BorderPane.alignment="CENTER">
          <children>
             <Label alignment="CENTER" text="Welcome Back">
                <font>
                   <Font name="Helvetica Bold" size="40.0" />
                </font>
             </Label>
+            <Label fx:id="infoPanel" />
             <TextField fx:id="loginUsername" prefHeight="56.0" prefWidth="334.0" promptText="Username" style="-fx-background-color: #d9d2c6;">
                <font>
                   <Font name="Helvetica" size="18.0" />
@@ -34,7 +35,7 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" />
                </VBox.margin>
             </TextField>
-            <Button fx:id="loginButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="56.0" prefWidth="334.0" style="-fx-background-color: #ed8008;" text="Login">
+            <Button fx:id="loginButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onLoginButtonClicked" prefHeight="56.0" prefWidth="334.0" style="-fx-background-color: #ed8008;" text="Login">
                <font>
                   <Font name="Helvetica" size="36.0" />
                </font>
@@ -44,8 +45,14 @@
             </Button>
             <HBox alignment="CENTER" prefHeight="37.0" prefWidth="266.0">
                <children>
-                  <Label prefHeight="17.0" prefWidth="150.0" text="Don't have an account ?" />
-                  <Button fx:id="signUpButton" mnemonicParsing="false" style="-fx-background-color: #000000;" text="Sign Up" textFill="#ed8008" />
+                  <Label prefHeight="19.0" prefWidth="165.0" text="Don't have an account ?">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Label>
+                  <Button fx:id="signUpButton" mnemonicParsing="false" onAction="#navigateToSignUp" prefHeight="35.0" prefWidth="88.0" style="-fx-background-color: #000000;" text="Sign Up" textFill="#ed8008">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
                </children>
             </HBox>
          </children>
@@ -54,4 +61,18 @@
          </BorderPane.margin>
       </VBox>
    </center>
+   <top>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="300.0" style="-fx-background-color: #ece8e2;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="startSceneButton" mnemonicParsing="false" onAction="#onStartSceneButtonClicked" prefHeight="56.0" prefWidth="145.0" style="-fx-background-color: #d9d2c6;" text="MY NEWS">
+               <font>
+                  <Font name="Helvetica Bold" size="22.0" />
+               </font></Button>
+            <Button fx:id="exitButton" mnemonicParsing="false" onAction="#onExitButtonClicked" prefHeight="41.0" prefWidth="66.0" style="-fx-background-color: #ad1d1d;" text="EXIT">
+               <font>
+                  <Font name="Helvetica Bold" size="16.0" />
+               </font></Button>
+         </children>
+      </HBox>
+   </top>
 </BorderPane>
