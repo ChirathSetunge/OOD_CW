@@ -142,7 +142,7 @@ public class ViewArticleController {
             // Increment the preference update count
             incrementPreferenceUpdateCount();
             System.out.println("Dislike button clicked");
-            System.out.println(currentUser.getUsername() + "current score after dislike button clicked: " + currentUser.getUserPreferences().getAllPreferences());
+            System.out.println(currentUser.getUsername() + " current score after dislike button clicked: " + currentUser.getUserPreferences().getAllPreferences());
             articleDislikeButton.setDisable(true); // Only allow one dislike per article
             infoPanel.setText("Article disliked!");
         }

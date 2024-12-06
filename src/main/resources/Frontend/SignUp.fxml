@@ -38,7 +38,7 @@
                   <Insets bottom="30.0" left="30.0" right="30.0" />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="registerEmail" prefHeight="56.0" prefWidth="334.0" promptText="Password" style="-fx-background-color: #d9d2c6;">
+            <TextField fx:id="registerEmail" prefHeight="56.0" prefWidth="334.0" promptText="E mail" style="-fx-background-color: #d9d2c6;">
                <font>
                   <Font name="Helvetica" size="18.0" />
                </font>

@@ -18,7 +18,10 @@
                   <Font name="Helvetica Bold" size="40.0" />
                </font>
             </Label>
-            <Label fx:id="infoPanel" />
+            <Label fx:id="infoPanel">
+               <font>
+                  <Font name="Helvetica Bold" size="16.0" />
+               </font></Label>
             <TextField fx:id="loginUsername" prefHeight="56.0" prefWidth="334.0" promptText="Username" style="-fx-background-color: #d9d2c6;">
                <font>
                   <Font name="Helvetica" size="18.0" />

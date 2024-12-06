@@ -108,7 +108,7 @@ public class DatabaseHandler {
         System.out.println("(DB) Logging in user: " + userAccount.getUsername());
         System.out.println("(DB) Active sessions: " + activeSessions);
         if (activeSessions.containsKey(userAccount.getUsername())) {
-            System.out.println("User already has an active session: " + userAccount.getUsername() + "Inform the user to logout from the other device.");
+            System.out.println("User already has an active session: " + userAccount.getUsername() + " Inform the user to logout from the other device.");
             return false;
         }
         // Check if the username and password match
