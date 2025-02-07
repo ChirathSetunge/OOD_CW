@@ -111,7 +111,7 @@ public class DatabaseHandler {
             System.out.println("User already has an active session: " + userAccount.getUsername() + " Inform the user to logout from the other device.");
             return false;
         }
-        // Check if the username and password match
+        // Check if the username and password match 
         String loginQuery = "SELECT count(1) FROM users WHERE username = ? AND password = ?";
         try (PreparedStatement preparedStatement = DatabaseHandler.getDbInstance().getConnection().prepareStatement(loginQuery)) {
             preparedStatement.setString(1, userAccount.getUsername());
